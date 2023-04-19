@@ -1,5 +1,5 @@
 export const initialState = {
-  token: !localStorage.getItem('token') || null,
+  token: localStorage.getItem('token') || null,
 };
 
 export const reducer = (state, action) => {
