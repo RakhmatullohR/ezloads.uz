@@ -17,6 +17,9 @@ const NewPasswordPage = () => {
         }}
         onFinish={onFinish}
       >
+        <div style={{ margin: '-15px 0 5px' }}>
+          <h3>Have you forgotten your password?</h3>
+        </div>
         <Form.Item
           name='password'
           label='New Password'
