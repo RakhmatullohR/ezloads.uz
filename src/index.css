@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--appPrimaryFont);
+}
+
+:root {
+  --appPrimaryFont: 'Open Sans', sans-serif;
+  --appTopNavHeight: 40px;
+  --appTopNavFontColor: #111827;
+  --appTopNavFontSize: 16px;
+  --appTopNavFontWeight: 600;
+  --appTopNavTitleLineHeight: 24px;
+  --appTopNavButtonFontWeight: 600;
+  --appTopNavButtonLineHeight: 22px;
+  --appTopNavButtonHeight: 32px;
+  --appTopNavButtonLetterSpacing: 0.02em;
+  --appTopNavNotification: none;
+  --appTopNavPadding: 8px;
+
+  --appLogFontSize: 11px;
+  --appFromLabelFontSize: 11px;
+  --appMainIconSize: 16px;
+  --appTableRowHoverColor: #e7ebf3;
+  --inputHight: 30px;
+  --appTopNavBarNotificationView: false;
+
+  /* for table */
+  --appPageHeaderFontSize: 16px;
+  --appPageHeaderFontWeight: 600;
+  --appTableHeaderFontSize: 12px;
+  --appTableHeaderFontWeight: 600;
+  --appTableFontSize: 12px;
+  --appTableFontWeight: 400;
+  --appTableCellLinkColor: #0167ff;
+  --appTableDefaultFontColor: #374151;
+  --appTableDisabledLinkColor: rgba(92, 100, 112, 0.6);
+  --appTableZoneColumnWidth: 13px;
+  --appTableSubcontentHeight: 20px;
+  --appTableRowHeight: 28px;
+
+  /* draver-header  */
+  --appDrawerHeaderHeight: 45px;
+
+  /* ICONS */
+  --appTableCollapseHeaderColor: #374151;
+  --appTableCollapseHeaderWeight: 600;
+  --appTableCollapseHeaderFontSize: 12px;
+  --appTableCollapseHeaderCountFontSize: 13px;
+  --appTableIconSize: 13px;
+  --appIconDefaultColor: #5c6470;
+  --appIconEditColor: #017aff;
+  --appIconDeleteColor: #ff0000;
+  --appIconHoverColor: #1893ff;
+
+  /* Truck - Trailer Dashboard Main icons */
+
+  --appTruckTrailerDashboardMainIconSize: 24px;
+}
+
+/* table configurations */
