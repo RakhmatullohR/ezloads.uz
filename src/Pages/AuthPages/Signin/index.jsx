@@ -45,13 +45,11 @@ const SignInPage = () => {
             placeholder='Password'
           />
         </Form.Item>
-        <Form.Item>
-          <div />
-
+        <div style={{ textAlign: 'right', margin: '-15px 0 5px' }}>
           <a className='login-form-forgot' href='/reset-password'>
             Forgot password
           </a>
-        </Form.Item>
+        </div>
         <Form.Item>
           <Button
             type='primary'
