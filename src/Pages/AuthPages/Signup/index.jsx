@@ -1,5 +1,6 @@
 import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
+import { Link } from 'react-router-dom';
 import { FormWrapper } from './style';
 const SignUpPage = () => {
   const onFinish = (values) => {
@@ -130,7 +131,7 @@ const SignUpPage = () => {
             Sign up
           </Button>
           <span>
-            If you have registered, <a href='signin'> signin now!</a>
+            If you have registered, <Link to='/signin'> signin now!</Link>
           </span>
         </Form.Item>
       </Form>

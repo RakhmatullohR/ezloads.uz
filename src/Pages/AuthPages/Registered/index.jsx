@@ -1,4 +1,5 @@
 import { Form } from 'antd';
+import { Link } from 'react-router-dom';
 import { FormWrapper } from './style';
 const RegisteredPage = () => {
   const onFinish = (values) => {
@@ -19,9 +20,9 @@ const RegisteredPage = () => {
         <h2 style={{ color: 'green' }}>✔ Registered Successfully</h2>
         <br />
         <Form.Item>
-          <a href='/main'>
+          <Link to='/main'>
             Go to <b>Main</b> page
-          </a>
+          </Link>
         </Form.Item>
       </Form>
     </FormWrapper>

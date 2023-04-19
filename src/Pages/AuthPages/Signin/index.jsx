@@ -1,5 +1,6 @@
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
+import { Link } from 'react-router-dom';
 import { FormWrapper } from './style';
 const SignInPage = () => {
   const onFinish = (values) => {
@@ -26,7 +27,7 @@ const SignInPage = () => {
           ]}
         >
           <Input
-            prefix={<UserOutlined className='site-form-item-icon' />}
+            prefix={<MailOutlined className='site-form-item-icon' />}
             placeholder='Email'
           />
         </Form.Item>
@@ -46,9 +47,9 @@ const SignInPage = () => {
           />
         </Form.Item>
         <div style={{ textAlign: 'right', margin: '-15px 0 5px' }}>
-          <a className='login-form-forgot' href='/reset-password'>
+          <Link className='login-form-forgot' to='/reset-password'>
             Forgot password
-          </a>
+          </Link>
         </div>
         <Form.Item>
           <Button
@@ -59,7 +60,7 @@ const SignInPage = () => {
             Log in
           </Button>
           <span>
-            Or <a href='signup'> register now!</a>
+            Or <Link to='/signup'> register now!</Link>
           </span>
         </Form.Item>
       </Form>
