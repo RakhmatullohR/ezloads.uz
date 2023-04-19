@@ -2,7 +2,9 @@ import React, { Suspense } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { useAuth } from '../context/Auth';
+import NewPasswordPage from '../Pages/AuthPages/NewPassword';
 import RegisteredPage from '../Pages/AuthPages/Registered';
+import ResetPasswordPage from '../Pages/AuthPages/ResetPassword';
 import SignInPage from '../Pages/AuthPages/Signin';
 import SignUpPage from '../Pages/AuthPages/Signup';
 import MainPage from '../Pages/Main';
@@ -102,6 +104,8 @@ export default function Root() {
           <Route path='/signin' element={<SignInPage />} />
           <Route path='/signup' element={<SignUpPage />} />
           <Route path='/registered' element={<RegisteredPage />} />
+          <Route path='/reset-password' element={<ResetPasswordPage />} />
+          <Route path='/new-password' element={<NewPasswordPage />} />
         </Routes>
       )}
     </Container>

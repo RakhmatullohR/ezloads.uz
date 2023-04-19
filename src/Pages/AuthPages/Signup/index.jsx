@@ -1,4 +1,4 @@
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, MailOutlined, UserOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
 import { FormWrapper } from './style';
 const SignUpPage = () => {
@@ -18,6 +18,44 @@ const SignUpPage = () => {
         onFinish={onFinish}
       >
         <Form.Item
+          name='firstname'
+          label='Firstname'
+          rules={[
+            {
+              type: 'text',
+              message: 'The input is not valid name!',
+            },
+            {
+              required: true,
+              message: 'Please input your name!',
+            },
+          ]}
+        >
+          <Input
+            prefix={<UserOutlined className='site-form-item-icon' />}
+            placeholder='Firstname'
+          />
+        </Form.Item>
+        <Form.Item
+          name='lastname'
+          label='Lastname'
+          rules={[
+            {
+              type: 'text',
+              message: 'The input is not valid name!',
+            },
+            {
+              required: true,
+              message: 'Please input your name!',
+            },
+          ]}
+        >
+          <Input
+            prefix={<UserOutlined className='site-form-item-icon' />}
+            placeholder='Lastname'
+          />
+        </Form.Item>
+        <Form.Item
           name='email'
           label='E-mail'
           rules={[
@@ -32,7 +70,7 @@ const SignUpPage = () => {
           ]}
         >
           <Input
-            prefix={<UserOutlined className='site-form-item-icon' />}
+            prefix={<MailOutlined className='site-form-item-icon' />}
             placeholder='Email'
           />
         </Form.Item>
@@ -91,6 +129,9 @@ const SignUpPage = () => {
           >
             Sign up
           </Button>
+          <span>
+            If you have registered, <a href='signin'> signin now!</a>
+          </span>
         </Form.Item>
       </Form>
     </FormWrapper>
