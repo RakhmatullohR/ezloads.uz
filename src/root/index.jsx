@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import { Link, Outlet, Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { useAuth } from '../context/Auth';
 import NewPasswordPage from '../Pages/AuthPages/NewPassword';
@@ -99,14 +99,42 @@ export default function Root() {
           </Wrapper>{' '}
         </>
       ) : (
-        <Routes>
-          <Route path='*' element={<SignInPage />} />
-          <Route path='/signin' element={<SignInPage />} />
-          <Route path='/signup' element={<SignUpPage />} />
-          <Route path='/registered' element={<RegisteredPage />} />
-          <Route path='/reset-password' element={<ResetPasswordPage />} />
-          <Route path='/new-password' element={<NewPasswordPage />} />
-        </Routes>
+        <>
+          <Routes>
+            <Route
+              path='/'
+              element={
+                <div style={{ width: '100vw' }}>
+                  <div
+                    style={{
+                      width: '100vw',
+                      display: 'flex',
+                      gap: '20px',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {' '}
+                    <p>these are for testing: </p>
+                    <Link to='/signin'>SignInPage</Link>
+                    <Link to='/signup'>SignUpPage</Link>
+                    <Link to='/registered'>RegisteredPage</Link>
+                    <Link to='/reset-password'>ResetPasswordPage</Link>
+                    <Link to='/new-password'>NewPasswordPage</Link>
+                    <Link to='/main'>MainPage</Link>
+                  </div>
+                  <Outlet />
+                </div>
+              }
+            >
+              <Route path='*' element={<SignInPage />} />
+              <Route path='/signin' element={<SignInPage />} />
+              <Route path='/signup' element={<SignUpPage />} />
+              <Route path='/registered' element={<RegisteredPage />} />
+              <Route path='/reset-password' element={<ResetPasswordPage />} />
+              <Route path='/new-password' element={<NewPasswordPage />} />
+            </Route>
+          </Routes>
+        </>
       )}
     </Container>
   );

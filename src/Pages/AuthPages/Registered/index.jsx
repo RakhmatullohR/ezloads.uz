@@ -1,4 +1,4 @@
-import {  Form } from 'antd';
+import { Form } from 'antd';
 import { FormWrapper } from './style';
 const RegisteredPage = () => {
   const onFinish = (values) => {
@@ -19,8 +19,8 @@ const RegisteredPage = () => {
         <h2 style={{ color: 'green' }}>✔ Registered Successfully</h2>
         <br />
         <Form.Item>
-          <a href='/signin'>
-            Go to <b>Signin</b> page
+          <a href='/main'>
+            Go to <b>Main</b> page
           </a>
         </Form.Item>
       </Form>
