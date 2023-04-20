@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const FormWrapper = styled.div`
   width: 350px;
   height: fit-content;
-  margin: 300px auto;
   .ant-input {
     background: white !important;
   }

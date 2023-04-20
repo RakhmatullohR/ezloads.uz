@@ -15,6 +15,7 @@ import { useAuth } from '../../context/Auth';
 // import { ParentRouteOption, RouteOption } from '../../assets/IconStyle';
 import { sidebarDataList } from '../../utils/sidebar';
 import { useNavigate } from 'react-router-dom';
+import { setCookie } from '../../utils/formatters';
 function getItem(label, key, Icon, children, type) {
   return {
     label: label,
@@ -65,7 +66,7 @@ const Sidebar = () => {
     return () => {};
   }, []);
 
-  const [{ role, user }] = useAuth();
+  const [{ role, user }, dispatch] = useAuth();
   const [visible, setVisible] = useState(false);
 
   const [collapsed, setCollapsed] = useState(true);
@@ -107,7 +108,13 @@ const Sidebar = () => {
         <UsersMenu.Help /> <span>Help</span>
       </UsersMenu.Item>
       <UsersMenu.Divider />
-      <UsersMenu.Item>
+      <UsersMenu.Item
+        onClick={async () => {
+          await setCookie('token', '');
+          dispatch({ type: 'logout' });
+          navigate('/signin');
+        }}
+      >
         <UsersMenu.Logout /> <span>Log out</span>
       </UsersMenu.Item>
     </UsersMenu>

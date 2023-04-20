@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { Link, Outlet, Route, Routes } from 'react-router-dom';
+import { Link, Navigate, Outlet, Route, Routes } from 'react-router-dom';
 import Sidebar from '../components/Sidebar';
 import { useAuth } from '../context/Auth';
 import NewPasswordPage from '../Pages/AuthPages/NewPassword';
@@ -27,7 +27,6 @@ export default function Root() {
             </SidebarWrapper>
           </PrivateRoute>
           <Wrapper>
-            {' '}
             <Suspense>
               <Routes>
                 <Route
@@ -86,14 +85,7 @@ export default function Root() {
                     </PrivateRoute>
                   }
                 />
-                <Route
-                  path='*'
-                  element={
-                    <PrivateRoute>
-                      <MainPage />
-                    </PrivateRoute>
-                  }
-                />
+                <Route path='*' element={<Navigate to='/main' />} />
               </Routes>
             </Suspense>
           </Wrapper>{' '}
@@ -108,9 +100,14 @@ export default function Root() {
                   <div
                     style={{
                       width: '100vw',
+                      height: '50px',
+                      background: '#f5baba',
                       display: 'flex',
                       gap: '20px',
                       justifyContent: 'center',
+                      alignItems: 'center',
+                      position: 'fixed',
+                      zIndex: 1,
                     }}
                   >
                     {' '}
@@ -126,7 +123,7 @@ export default function Root() {
                 </div>
               }
             >
-              <Route path='*' element={<SignInPage />} />
+              <Route path='*' element={<Navigate to='/signin' />} />
               <Route path='/' element={<SignInPage />} />
               <Route path='/signin' element={<SignInPage />} />
               <Route path='/signup' element={<SignUpPage />} />

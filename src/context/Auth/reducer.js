@@ -1,20 +1,17 @@
+import { getCookie, setCookie } from '../../utils/formatters';
+
 export const initialState = {
-  token: localStorage.getItem('token') || null,
+  token: getCookie('token') || null,
 };
 
 export const reducer = (state, action) => {
   switch (action.type) {
     case 'login':
-      action.payload !== undefined &&
-        localStorage.setItem('token', action.payload);
+      action.payload !== undefined && setCookie('token', action.payload);
       return { ...state, token: action.payload };
 
     case 'logout':
-      localStorage.removeItem('token');
-      localStorage.removeItem('firebaseToken');
-      localStorage.removeItem('username');
-      localStorage.removeItem('profile-image');
-      localStorage.clear();
+      setCookie('token', '');
 
       return { ...state, token: null, role: '', currentUserId: '' };
 

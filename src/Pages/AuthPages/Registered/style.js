@@ -1,17 +1,15 @@
 import styled from 'styled-components';
-
-const FormWrapper = styled.div`
-  width: 500px;
-  height: fit-content;
-  margin: 300px auto;
-  text-align: center;
-  .ant-input {
-    background: white !important;
-  }
-
-  .ant-form-vertical .ant-form-item-label {
-    padding: 0 !important;
-  }
+export const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
-export { FormWrapper };
+const MessageBox = styled.div`
+  width: 500px;
+  height: fit-content;
+  text-align: center;
+`;
+
+export { MessageBox };

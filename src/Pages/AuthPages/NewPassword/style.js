@@ -1,9 +1,15 @@
 import styled from 'styled-components';
 
+export const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
 const FormWrapper = styled.div`
   width: 350px;
   height: fit-content;
-  margin: 300px auto;
   .ant-input {
     background: white !important;
   }
@@ -16,9 +22,10 @@ const FormWrapper = styled.div`
       width: 100%;
     }
   }
-  .ant-form-vertical .ant-form-item-label {
-    padding: 0 !important;
+  .ant-col.ant-form-item-label {
+    margin: 0;
   }
+
   // Remove Chrome autofill background color
   input:-webkit-autofill,
   input:-webkit-autofill:hover,

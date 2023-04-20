@@ -1,47 +1,50 @@
 import { MailOutlined } from '@ant-design/icons';
 import { Button, Form, Input } from 'antd';
-import { FormWrapper } from './style';
+import { FormWrapper, Wrapper } from './style';
 const ResetPasswordPage = () => {
   const onFinish = (values) => {
     console.log('Received values of form: ', values);
   };
   return (
-    <FormWrapper>
+    <Wrapper>
       {' '}
-      <Form
-        name='normal_login'
-        className='login-form'
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-      >
-        <Form.Item
-          name='email'
-          rules={[
-            {
-              required: true,
-              message: 'Please input your Email!',
-            },
-          ]}
+      <FormWrapper>
+        {' '}
+        <Form
+          name='normal_login'
+          className='login-form'
+          initialValues={{
+            remember: true,
+          }}
+          onFinish={onFinish}
         >
-          <Input
-            prefix={<MailOutlined className='site-form-item-icon' />}
-            placeholder='Email'
-          />
-        </Form.Item>
-
-        <Form.Item>
-          <Button
-            type='primary'
-            htmlType='submit'
-            className='login-form-button'
+          <Form.Item
+            name='email'
+            rules={[
+              {
+                required: true,
+                message: 'Please input your Email!',
+              },
+            ]}
           >
-            Submit
-          </Button>
-        </Form.Item>
-      </Form>
-    </FormWrapper>
+            <Input
+              prefix={<MailOutlined className='site-form-item-icon' />}
+              placeholder='Email'
+            />
+          </Form.Item>
+
+          <Form.Item>
+            <Button
+              type='primary'
+              htmlType='submit'
+              className='login-form-button'
+            >
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+      </FormWrapper>
+    </Wrapper>
   );
 };
 export default ResetPasswordPage;

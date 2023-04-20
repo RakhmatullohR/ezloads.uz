@@ -1,31 +1,21 @@
 import { Form } from 'antd';
 import { Link } from 'react-router-dom';
-import { FormWrapper } from './style';
+import { MessageBox, Wrapper } from './style';
 const RegisteredPage = () => {
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
   return (
-    <FormWrapper>
-      {' '}
-      <Form
-        layout='vertical'
-        name='normal_login'
-        className='login-form'
-        initialValues={{
-          remember: true,
-        }}
-        onFinish={onFinish}
-      >
-        <h2 style={{ color: 'green' }}>✔ Registered Successfully</h2>
-        <br />
-        <Form.Item>
-          <Link to='/main'>
-            Go to <b>Main</b> page
-          </Link>
-        </Form.Item>
-      </Form>
-    </FormWrapper>
+    <Wrapper>
+      <MessageBox>
+        <>
+          <h2 style={{ color: '#004bbd' }}>✔ Email was verified</h2>
+          <br />
+          <Form.Item>
+            <Link to='/main'>
+              Go to <b>Main</b> page
+            </Link>
+          </Form.Item>
+        </>
+      </MessageBox>
+    </Wrapper>
   );
 };
 export default RegisteredPage;
