@@ -127,6 +127,7 @@ export default function Root() {
               }
             >
               <Route path='*' element={<SignInPage />} />
+              <Route path='/' element={<SignInPage />} />
               <Route path='/signin' element={<SignInPage />} />
               <Route path='/signup' element={<SignUpPage />} />
               <Route path='/registered' element={<RegisteredPage />} />
