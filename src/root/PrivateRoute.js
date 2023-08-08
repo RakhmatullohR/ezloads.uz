@@ -6,7 +6,7 @@ const PrivateRoute = ({ children }) => {
   let [{ token }] = useAuth();
   console.log(token);
   console.log(children);
-  return token ? children : <Navigate to='/signin' />;
+  return true ? children : <Navigate to='/signin' />;
 };
 
 export default PrivateRoute;

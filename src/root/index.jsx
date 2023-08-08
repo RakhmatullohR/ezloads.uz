@@ -19,7 +19,7 @@ export default function Root() {
   const [{ token }] = useAuth();
   return (
     <Container>
-      {token ? (
+      {!token ? (
         <>
           <PrivateRoute>
             <SidebarWrapper>
